@@ -7,14 +7,21 @@ import ProjectTwo from './ProjectTwo';
 import ProjectThree from './ProjectThree';
 import styled from 'styled-components';
 import Contact from './Contact';
+import DarkMode from './DarkMode'
 
-
-function Home() {
+function Home(props) {
+  function changeTheme() {
+    if(props.theme == 'light'){
+        props.setTheme('dark');
+    } else{
+        props.setTheme('light');
+    }
+};
   return (
       
     <div className="Home">
       
-        <Header /> 
+        <DarkMode /> 
         <About />
         <Projects>
             <ProjectOne/>

@@ -15,7 +15,7 @@ function ProjectOne() {
         <motion.div  whileHover={{ scale: 1.3 }}
             
             transition={{duration:.5}}
-         >
+        >
             
         <Container>
             

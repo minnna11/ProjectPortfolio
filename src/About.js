@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { Button} from 'react-bootstrap';
-import Social from './Social'
-import { motion } from 'framer-motion'
+import Social from './Social';
+import { motion } from 'framer-motion';
+import Popup from './Popup';
 
 function About() {
     return (
@@ -18,14 +19,14 @@ function About() {
                     <ContentName>Min</ContentName>
                 
                     <ContentButton>
-                    About Me
+                        <Popup />
                     </ContentButton>
             </ContentA>
             </motion.div>
             <Border></Border>
             <ContentB>
-                <SocialOne><LinkedInIcon style={{fontSize: 60}}/></SocialOne>
-                <SocialTwo><GitHubIcon style={{fontSize: 50}}/></SocialTwo>
+                <SocialOne><a href="https://www.linkedin.com/in/maung17/" target="_blank"><LinkedInIcon style={{fontSize: 60}}/></a></SocialOne>
+                <SocialTwo><a href="https://github.com/minnna11" target="_blank"><GitHubIcon style={{fontSize: 50}}/></a></SocialTwo>
             
             </ContentB>
             
@@ -48,6 +49,13 @@ const ContentB = styled.div`
     flex-direction:column;
     width:70px;
     margin-right:25px; 
+
+    a{
+        color:black;
+    }
+    a:hover{
+        color:#8A2BE2;
+    }
 `
 const ContentA = styled.div`
     display:flex;
@@ -67,19 +75,6 @@ const ContentName = styled.div`
 `
 
 const ContentButton = styled.div`
-    display:flex;
-    justify-content:center;
-    padding:11px 11px 11px 11px;
-    border-radius: 15px;
-    border: 2px solid black;
-    background-color:white;
-    color:black;
-    cursor:pointer;
-    
-    :hover{
-        background-color:black;
-        color:white;
-    }
 `
 
 const Border = styled.div`
@@ -89,6 +84,7 @@ const Border = styled.div`
 const SocialOne = styled.div`
     cursor:pointer;
     margin-bottom:17px;
+    
 `
 const SocialTwo = styled.div`
     cursor:pointer;

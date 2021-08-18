@@ -5,89 +5,95 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { MicNone } from '@material-ui/icons';
+import { motion } from 'framer-motion'
 
 function Contact() {
     return (
-        <Content>
-        <Container>
+        <motion.div  whileHover={{ scale: 1.02 }}
             
-            <LeftContent>
-                <ContactHeader id="contact">
-                    <h1>Contact</h1>
-                </ContactHeader>
-                <ContactDescription>
-                    <IconOne>
-                        <PhoneContent>
-                            <PhoneIcon />
-                            <h2>Phone</h2>                   
-                        </PhoneContent>
-                        <PhoneNumber>
-                            <h2>919-448-7647</h2>
-                        </PhoneNumber>
-                    </IconOne>
-                    
-                    
-                    <IconTwo>
-                        <MailContent>
-                            <MailOutlineIcon />
-                            <h2>Email</h2>
-                        </MailContent>
-                        <EmailContent>
-                            <h2>maung@uncc.com</h2>
-                        </EmailContent>
-                    </IconTwo>
-                    
-                    
-                </ContactDescription>
-                <ContainIcon>
-                    <LinkedInIcon style={{fontSize:40, marginRight:10}} />
-                    <GitHubIcon style={{fontSize:34}}/>
-                </ContainIcon>
-            </LeftContent>
-            <RightContent>
-                <form>
-                    <ClientInput>
-                        <FirstName>
-                            <label>
-                                <h1>First</h1>
-                                <input style={{width:180}} type="text" name="fName" />
-                            </label>
-                        </FirstName>
-                        <LastName>
-                            <label>
-                                <h1>Last</h1>
-                                <input style={{width:180}} type="text" name="lName" />
-                            </label>
-                        </LastName>
+            transition={{duration:.5}}
+        >
+            <Content>
+            <Container>
+                
+                <LeftContent>
+                    <ContactHeader id="contact">
+                        <h1>Contact</h1>
+                    </ContactHeader>
+                    <ContactDescription>
+                        <IconOne>
+                            <PhoneContent>
+                                <PhoneIcon />
+                                <h2>Phone</h2>                   
+                            </PhoneContent>
+                            <PhoneNumber>
+                                <h2>919-448-7647</h2>
+                            </PhoneNumber>
+                        </IconOne>
                         
-                        <ClientEmail>
+                        
+                        <IconTwo>
+                            <MailContent>
+                                <MailOutlineIcon />
+                                <h2>Email</h2>
+                            </MailContent>
+                            <EmailContent>
+                                <h2>maung@uncc.com</h2>
+                            </EmailContent>
+                        </IconTwo>
+                        
+                        
+                    </ContactDescription>
+                    <ContainIcon>
+                        <LinkedInIcon style={{fontSize:40, marginRight:10}} />
+                        <GitHubIcon style={{fontSize:34}}/>
+                    </ContainIcon>
+                </LeftContent>
+                <RightContent>
+                    <form>
+                        <ClientInput>
+                            <FirstName>
+                                <label>
+                                    <h1>First</h1>
+                                    <input style={{width:180}} type="text" name="fName" />
+                                </label>
+                            </FirstName>
+                            <LastName>
+                                <label>
+                                    <h1>Last</h1>
+                                    <input style={{width:180}} type="text" name="lName" />
+                                </label>
+                            </LastName>
+                            
+                            <ClientEmail>
+                                <label>
+                                    <h1>Email</h1>
+                                    <input style={{width:180}} type="email" name="email" />
+                                </label>
+                            </ClientEmail>
+                            <ClientPhone>
+                                <label>
+                                    <h1>Phone</h1>
+                                    <input style={{width:180}} type="text" name="phone" />
+                                </label>
+                            </ClientPhone>
+                            <ClientMessage>
                             <label>
-                                <h1>Email</h1>
-                                <input style={{width:180}} type="email" name="email" />
-                            </label>
-                        </ClientEmail>
-                        <ClientPhone>
-                            <label>
-                                <h1>Phone</h1>
-                                <input style={{width:180}} type="text" name="phone" />
-                            </label>
-                        </ClientPhone>
-                        <ClientMessage>
-                        <label>
-                                <h1>Message</h1>
-                                <input style={{width:180}} type="text" name="Message" />
-                                
-                            </label>
-                        </ClientMessage>
-                    </ClientInput>
-                    <ContactButton>
-                        <input type="submit" value="Send" />
-                    </ContactButton>                   
-                </form>
-            </RightContent>
-            
-        </Container>
-        </Content>
+                                    <h1>Message</h1>
+                                    <input style={{width:180}} type="text" name="Message" />
+                                    
+                                </label>
+                            </ClientMessage>
+                        </ClientInput>
+                        <ContactButton>
+                            <input type="submit" value="Send" />
+                        </ContactButton>                   
+                    </form>
+                </RightContent>
+                
+            </Container>
+            </Content>
+        </motion.div>
     )
 }
 
@@ -258,5 +264,13 @@ const ContactButton = styled.div`
        color:white;
        padding: 8px 35px 8px 35px;  
        margin:10px 25px 0px 0px;
+       cursor:pointer;
+
+       :hover{
+            color:black;
+            background-color:white;
+        }
    }
+
+   
 `

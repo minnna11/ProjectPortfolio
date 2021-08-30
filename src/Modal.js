@@ -39,8 +39,8 @@ export const Modal = ({showModal, setShowModal}) => {
 const Container = styled.div`
     margin-left:340px;
     border:5px solid black;
-    width:75%;
-    height:60%;
+    width:80%;
+    height:80%;
     background-color:white;
     color:white;
     position:fixed;

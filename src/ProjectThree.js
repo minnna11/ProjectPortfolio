@@ -2,18 +2,23 @@ import React from 'react'
 import styled from 'styled-components'
 import asiacafe from './images/AsiaCafe.png';
 import { motion } from 'framer-motion'
-function ProjectThree() {
-    return (
 
-        <motion.dv whileHover={{scale:1.3}}
-        transition={{duration:.5}}>
+function ProjectOne(props) {
+
+    return (
+        
+        <motion.div  whileHover={{ scale: 1.3 }}
+            
+            transition={{duration:.5}}
+        >
+            
         <Container>
             
             <ContentName>
-                    Project 3
+                    Project 2
             </ContentName>
             <MainContent>
-                <ContentRight>
+                <ContentLeft>
                     <ContentDescription>
                         <h1>Tools</h1>
                         <p>JavaScript</p>
@@ -22,23 +27,25 @@ function ProjectThree() {
                         <p>Firebase</p>
                     </ContentDescription>
                     <ContentButton><a href="https://asia-cafe-b97aa.web.app/" target="_blank">Amazon Clone</a></ContentButton>
-                </ContentRight>
+                </ContentLeft>
                 <ContentImage>
                     <img src={asiacafe} alt="Logo" />
                 </ContentImage>
             </MainContent>
             
         </Container>
-        </motion.dv>
+        
+        </motion.div>
+       
     )
 }
 
-export default ProjectThree
+export default ProjectOne
 const Container = styled.div`
     margin-top:140px;
     display:flex;
     flex-direction: column;
-    height:500px;
+    height:400px;
     justify-content:center;
     align-items:center;
     margin-bottom:100px;
@@ -48,10 +55,11 @@ const ContentName = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    color:black;
+    color:${props => props.theme.contentColor};
     margin-bottom:5px;
 `
 const ContentImage = styled.div`
+    
     img{
         width:320px;
         height:320px;
@@ -59,41 +67,39 @@ const ContentImage = styled.div`
     }
 `
 
-const MainContent = styled.div`
-    
-padding:10px 15px 10px 15px;
-box-shadow: 12px 15px 2px 1px rgba(0, 40, 255, .2);
-border:2px solid black;
-display:flex;
+const MainContent = styled.div` 
+    padding:10px 15px 10px 15px;
+    box-shadow: ${props => props.theme.shadows};
+    border:4px solid ${props => props.theme.borderColor};
+    display:flex;
     
 `
 
 const ContentButton = styled.div`
     margin-top:25px;
-    border:2px solid black;
+    border:3px solid ${props => props.theme.borderColor};
+    
     display:flex;
     justify-content:center;
-    align-items:center;
     padding: 7px 2px 7px 2px;
     margin-right:10px;
     border-radius:10px;
-    text-align:center;
+    
     :hover{
-        background-color:black;
-        color:white;
+        background-color:${props => props.theme.hoverColor};
     }
 
     a{
-        text-decoration:none;
-        color:black;
-        display:flex;
-        
+        text-decoration:none;   
+        color: ${props => props.theme.contentColor};
+    }
+    a:hover {
+        color:${props => props.theme.hoverText};
     }
 `
 
 const ContentDescription = styled.div`
-    color:black;
-    
+    color: ${props => props.theme.contentColor};
     margin-top:35px;
     margin-right:20px;
      h1{
@@ -105,7 +111,7 @@ const ContentDescription = styled.div`
      }
 `
 
-const ContentRight = styled.div`
+const ContentLeft = styled.div`
      display:flex;
-     flex-direction:column;
+     flex-direction:column;   
 `

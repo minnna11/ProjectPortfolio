@@ -12,8 +12,7 @@ function Header(props) {
             props.setTheme('light');
         }
     };
-    //const icon = props.theme =='light' ? <CgSun color={'white'}/> : <CgSun color={'black'}/>;
-    //const icon2 = props.theme =='light' ? <HiMoon color={'black'}/> : <HiMoon color={'white'}/>;
+    const moon = props.theme =='light' ? <HiMoon color={'black'}/> : <HiMoon color={'white'}/>;
     
     return (
         /* Header container*/
@@ -34,11 +33,8 @@ function Header(props) {
                     <CgSun/>
                 </ButtonOne>
                 <ButtonTwo>
-                    <HiMoon/>
-                </ButtonTwo>
-            
-            
-                
+                    {moon}
+                </ButtonTwo>   
             </HeaderMode>      
         </Container>
         
@@ -51,12 +47,10 @@ export default Header
 const Container = styled.div`
     display: flex;
     justify-content: flex-end; 
-    margin: 20px 40px 20px 40px;
+    
     font-size: 10px;
-    padding:20px 0px 20px 20px;
+    padding:40px 40px 40px 60px;
     align-items:center;
-    background-color:${props => props.theme.pageBackground};
-    color: ${props => props.theme.titleColor};
     
 `
 
@@ -91,16 +85,18 @@ const ButtonOne = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    background-color:${props => props.theme.pageBackground};
-    color: ${props => props.theme.titleColor};
+    background-color:${props => props.theme.buttonColor};
+    color: black;
 `
 const ButtonTwo = styled.div`
     padding:4px 5px 3px 5px;
     border-top-right-radius:15px;
     border-bottom-right-radius:15px;
-    border:3px solid ${props => props.theme.BorderColor};
+    border:3px solid black;
     display:flex;
     align-items:center;
     justify-content:center;
-    background-color:${props => props.theme.pageBackgrouund};
+    
+    background-color:${props => props.theme.pageBackground};
+    border:3px solid ${props => props.theme.BorderColor};
 `

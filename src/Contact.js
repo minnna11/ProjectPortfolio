@@ -7,7 +7,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import { MicNone } from '@material-ui/icons';
 import { motion } from 'framer-motion'
 
-function Contact() {
+function Contact(props) {
     return (
         <motion.div  whileHover={{ scale: 1.02 }}
             
@@ -45,8 +45,8 @@ function Contact() {
                         
                     </ContactDescription>
                     <ContainIcon>
-                        <LinkedInIcon style={{fontSize:40, marginRight:10}} />
-                        <GitHubIcon style={{fontSize:34}}/>
+                        <a href="https://www.linkedin.com/in/maung17/" target="_blank"><LinkedInIcon style={{fontSize:40, marginRight:10}} /></a>
+                        <a href="https://github.com/minnna11" target="_blank"><GitHubIcon style={{fontSize:34}}/></a>
                     </ContainIcon>
                 </LeftContent>
                 <RightContent>
@@ -101,6 +101,8 @@ export default Contact
 const Content = styled.div`
     margin-bottom:10px;
     padding:20px 0px 100px 0px;
+    background-color: ${props => props.theme.pageBackground};
+    
 `
 const Container = styled.div`
     width:60%;
@@ -111,6 +113,7 @@ const Container = styled.div`
     border-radius:50px;
     
     
+    
 `
 const LeftContent = styled.div`
     box-shadow: 12px 22px 18px 1px rgba(0, 0, 0, .7);
@@ -118,8 +121,8 @@ const LeftContent = styled.div`
     padding:40px 15px 20px 30px;
     border-top-left-radius: 45px;
     border-bottom-left-radius: 45px;
-    background-color:black;
-    color:white;
+    background-color:${props => props.theme.borderColor};
+    color:${props => props.theme.pageBackground};
     margin-left:-70px;
     margin-right:20px;
     h2 {
@@ -128,7 +131,7 @@ const LeftContent = styled.div`
     
 `
 const ContactHeader = styled.div`
-    text-shadow: 5px 5px 2px black;
+    text-shadow: ${props => props.theme.contactShadow};
 `
 const ContactDescription = styled.div`
     margin-bottom:80px;
@@ -138,7 +141,9 @@ const ContainIcon = styled.div`
     display:flex;
     align-items:center;
     justify-content:flex-start;
-    
+    a{
+        color: ${props => props.theme.pageBackground};
+    }
 `
 const RightContent = styled.div`
     padding:40px 10px 20px 35px;
@@ -152,6 +157,8 @@ const RightContent = styled.div`
     border-bottom-right-radius: 45px;
     display:flex;
     width:80%;
+    background-color: white;
+    border-color:${props => props.theme.borderColor};
     
     h1{
         font-size:15px;

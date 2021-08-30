@@ -9,7 +9,8 @@ import {
     Link,NavLink
   } from "react-router-dom";
 
-function ProjectOne() {
+function ProjectOne(props) {
+
     return (
         
         <motion.div  whileHover={{ scale: 1.3 }}
@@ -23,7 +24,7 @@ function ProjectOne() {
                     Project 1
             </ContentName>
             <MainContent>
-                <ContentRight>
+                <ContentLeft>
                     <ContentDescription>
                         <h1>Tools</h1>
                         <p>JavaScript</p>
@@ -32,7 +33,7 @@ function ProjectOne() {
                         <p>Firebase</p>
                     </ContentDescription>
                     <ContentButton><a href="https://asia-cafe-b97aa.web.app/" target="_blank">Asia Cafe</a></ContentButton>
-                </ContentRight>
+                </ContentLeft>
                 <ContentImage>
                     <img src={asiacafe} alt="Logo" />
                 </ContentImage>
@@ -50,21 +51,21 @@ const Container = styled.div`
     margin-top:140px;
     display:flex;
     flex-direction: column;
-    background-color:white;
     height:400px;
     justify-content:center;
     align-items:center;
     
 `
 const ContentName = styled.div`
-   
+    
     display:flex;
     align-items:center;
     justify-content:center;
-    color:black;
+    color:${props => props.theme.contentColor};
     margin-bottom:5px;
 `
 const ContentImage = styled.div`
+    
     img{
         width:320px;
         height:320px;
@@ -74,15 +75,16 @@ const ContentImage = styled.div`
 
 const MainContent = styled.div` 
     padding:10px 15px 10px 15px;
-    box-shadow: 12px 15px 2px 1px rgba(0, 40, 255, .2);
-    border:2px solid black;
+    box-shadow: ${props => props.theme.shadows};
+    border:4px solid ${props => props.theme.borderColor};
     display:flex;
     
 `
 
 const ContentButton = styled.div`
     margin-top:25px;
-    border:2px solid black;
+    border:3px solid ${props => props.theme.borderColor};
+    
     display:flex;
     justify-content:center;
     padding: 7px 0px 7px 0px;
@@ -90,21 +92,20 @@ const ContentButton = styled.div`
     border-radius:10px;
     
     :hover{
-        background-color:black;
-        color:white;
+        background-color:${props => props.theme.hoverColor};
     }
 
     a{
         text-decoration:none;   
-        color:black; 
+        color: ${props => props.theme.contentColor};
     }
     a:hover {
-        color:white;
+        color:${props => props.theme.hoverText};
     }
 `
 
 const ContentDescription = styled.div`
-    color:black;  
+    color: ${props => props.theme.contentColor};
     margin-top:35px;
     margin-right:20px;
      h1{
@@ -116,7 +117,7 @@ const ContentDescription = styled.div`
      }
 `
 
-const ContentRight = styled.div`
+const ContentLeft = styled.div`
      display:flex;
      flex-direction:column;   
 `

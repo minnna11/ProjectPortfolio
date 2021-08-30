@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components';
 import {Modal} from './Modal';
 
-function Popup() {
+function Popup(propss) {
     const [showModal, setShowModal] = useState(false);
     const openModal = () => {
         setShowModal(prev => !prev);
@@ -27,12 +27,12 @@ const Button = styled.button`
     font-size:15px;
     padding:10px 20px 10px 20px;
     border-radius:10px;
-    color:black;
-    background-color:white;
+    
     cursor:pointer;
-
+    border:4px solid ${props => props.theme.borderColor};
+    background-color: ${props => props.theme.pageBackground};
+    color: ${props => props.theme.contentColor};
     :hover{
-        color:white;
-        background-color:black;
+        
     }
 `

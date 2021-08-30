@@ -7,7 +7,10 @@ import Social from './Social';
 import { motion } from 'framer-motion';
 import Popup from './Popup';
 
-function About() {
+function About(props) {
+   
+    //const icon = props.theme =='light' ? <CgSun color={'white'}/> : <CgSun color={'black'}/>;
+    //const icon2 = props.theme =='light' ? <HiMoon color={'black'}/> : <HiMoon color={'white'}/>;
     return (
         //content container
         <Container>
@@ -40,21 +43,23 @@ const Container = styled.div`
     display:flex;
     justify-content:flex-end;
     height:500px;
+    background-color:${props => props.theme.pageBackground};
 `
 
 const ContentB = styled.div`
-    margin-left:70px;
+    
     display:flex;
     align-items:center;
     flex-direction:column;
     width:70px;
-    margin-right:25px; 
+    
+    margin:25px 45px 0px 70px;
 
     a{
-        color:black;
+        color:${props => props.theme.contentColor};
     }
     a:hover{
-        color:#8A2BE2;
+        color:${props => props.theme.contentColor};
     }
 `
 const ContentA = styled.div`
@@ -66,7 +71,7 @@ const ContentA = styled.div`
     text-decoration: none;  
     width:500px;
     margin-right:200px;
-    
+    color:${props => props.theme.contentColor};
 `
 
 const ContentName = styled.div`
